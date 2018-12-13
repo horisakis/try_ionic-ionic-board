@@ -11,11 +11,8 @@ export class HomePage {
     userName: string,
     message: string,
     createdDate: any
-  } = {
-    userName: 'Taro Yamada',
-    message: 'これはテストメッセージです',
-    createdDate: '10分前'
   };
+  message : string;
 
   posts: { userName: string, message: string, createdDate: any}[]
   = [
@@ -30,8 +27,22 @@ export class HomePage {
         createdDate: '5分前'
       }
   ]
+
   constructor(public navCtrl: NavController) {
 
   }
 
+  addPost() {
+    // 入力されたメッセージを使って、投稿データを作成
+    this.post = {
+      userName: 'Akira Yanagihara',
+      message: this.message,
+      createdDate: '数秒前'
+    };
+    // 配列postsにpostを追加する
+    this.posts.push(this.post);
+    // 入力フィールドをからにする
+    this.message = "";
+
+  }
 }
