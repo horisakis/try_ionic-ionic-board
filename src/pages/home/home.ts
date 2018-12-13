@@ -7,6 +7,16 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  post: {
+    userName: string,
+    message: string,
+    createdDate: any
+  } = {
+    userName: 'Taro Yamada',
+    message: 'これはテストメッセージです',
+    createdDate: '10分前'
+  };
+
   constructor(public navCtrl: NavController) {
 
   }
